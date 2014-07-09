@@ -1,0 +1,15 @@
+header
+  article.index
+    .logo
+      h1
+        a href="#" Users
+	
+  article
+    .logo
+      h1
+        = link-to "home" | Projects
+
+section#main
+  = outlet
+
+footer

@@ -1,0 +1,11 @@
+article#users
+  h1
+    | Users
+    link-to 'users.new' | New User
+
+  ul
+    each user in controller
+      link-to 'user' user tagName="li"
+        user.fullName
+
+outlet      
