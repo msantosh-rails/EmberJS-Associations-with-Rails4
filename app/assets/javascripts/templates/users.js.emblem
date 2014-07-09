@@ -2,9 +2,9 @@ article#users
   h1
     | Users
     link-to 'users.new' | New User
-
+  view Ember.TextField value=search placeholder="Search Users" classNames="search"
   ul
-    each user in controller
+    each user in users
       link-to 'user' user tagName="li"
         user.fullName
 

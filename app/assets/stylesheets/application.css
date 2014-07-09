@@ -205,7 +205,7 @@ article#users ul li:hover, article#users ul li.active {
 }
 
 article#user {
-  margin: 18px;
+  margin: 10px;
   width: 60%;
   float: left;
 }
