@@ -5,7 +5,7 @@ App.User = DS.Model.extend({
   phone: DS.attr('string'),
   status: DS.attr('string', { defaultValue: 'new' }),
   notes: DS.attr('string'),
-
+//  projects: DS.hasMany("project", {async: true}),
   fullName: function() {
     return this.get('firstName') + ' ' + this.get('lastName')
   }.property('firstName', 'lastName'),
@@ -13,8 +13,7 @@ App.User = DS.Model.extend({
 })
 
 App.User.reopenClass({
-  STATUSES: ['new', 'in progress', 'closed', 'bad'],
-
+  
   valid: function(fields) {
     return fields.firstName && fields.lastName
   }

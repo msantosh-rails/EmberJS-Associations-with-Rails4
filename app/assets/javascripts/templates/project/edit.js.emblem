@@ -1,0 +1,17 @@
+article#user
+  h1
+    model.projectName
+
+  form
+    fieldset
+      dl
+        dt: label Project Name:
+        dd: view Ember.TextField value=model.projectName
+
+      dl
+        dt: label Technology:
+        dd: view Ember.TextField value=model.technology
+
+    fieldset.actions
+      input type='submit' value='Save Changes' click="saveChanges"
+      a.cancel href="#" click="cancel" cancel

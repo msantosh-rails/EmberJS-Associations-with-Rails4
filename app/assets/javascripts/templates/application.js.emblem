@@ -7,7 +7,7 @@ header
   article
     .logo
       h1
-        = link-to "home" | Projects
+        = link-to "projects" | Projects
 
 section#main
   = outlet

@@ -1,0 +1,11 @@
+article#users
+  h1
+    | Projects
+    link-to 'projects.new' | New Project
+
+  ul
+    each project in controller
+      link-to 'project' project tagName="li"
+        project.projectName
+
+outlet            

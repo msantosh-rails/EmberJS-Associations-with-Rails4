@@ -19,6 +19,9 @@ unless isEditing
       model.phone
 
     p
+      ' No.of Projects:
+
+    p
       label About:
       br
       view Ember.TextArea value=model.notes

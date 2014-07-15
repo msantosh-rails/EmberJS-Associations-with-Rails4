@@ -237,8 +237,18 @@ label {
   vertical-align: top;
   width: 90px;
 }
+a.edit:hover
+{
 
-input[type='submit'] {
+	text-decoration: none;
+		
+}
+a.edit
+{
+	color:white;
+}
+
+input[type='submit'], .edit {
   background: #f57011;
   border: none;
   padding: 5px 25px 8px;

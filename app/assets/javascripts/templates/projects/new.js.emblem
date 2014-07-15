@@ -1,0 +1,30 @@
+article#user
+  h1 New Project
+
+  if showError
+      .error Project must have a Project Name and Technology.
+
+  form
+    fieldset
+      dl
+        dt: label Project Name:
+        dd: view Ember.TextField value=fields.projectName
+
+      dl
+        dt: label Technology:
+        dd: view Ember.TextField value=fields.technology
+        	
+      dl
+        dt: label Assign To:
+        dd: view Ember.Select content=users optionValuePath="content.id" optionLabelPath="content.firstName" value=fields.userId 
+        
+        //view Ember.Select contentBinding=model optionValuePath='content.id' optionLabelPath='content.id' 
+        
+        //view Ember.Select content=App.Project.USERS value=fields.userId
+        
+        //view Ember.Select contentBinding="users" optionLabelPath="content.id" optionValuePath="content.id"
+        
+        //view Ember.Select contentBinding="users" optionValuePath="content.id" optionLabelPath="content.id"
+        
+    fieldset.actions
+      input type='submit' value='Create Project' click="createProject"

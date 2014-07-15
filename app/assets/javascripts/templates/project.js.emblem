@@ -1,0 +1,20 @@
+outlet
+
+unless isEditing
+  article#user
+    h1
+      = model.projectName
+      
+
+    p
+      ' Project Name:
+      model.projectName
+
+    p
+      ' Technology:
+      model.technology
+
+
+    p
+      a.delete href='#' click="delete" delete
+      link-to 'Edit' 'project.edit' model classNames='edit'
