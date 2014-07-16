@@ -1,0 +1,18 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <div class="brand strong">{{#linkTo 'home'}}Home{{/linkTo}}</div>
+      <ul class="nav">
+          <li>{{#linkTo 'projects'}}Projects{{/linkTo}}</li>
+      </ul>
+      <div class="btn-group pull-right">
+        {{#if isAuthenticated}}
+            <button class="btn" {{action logout}}>Logout</button>
+        {{else}}
+        	{{#linkTo 'login'}}Login{{/linkTo}}
+        	{{#linkTo 'registration'}}Register{{/linkTo}}        	
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

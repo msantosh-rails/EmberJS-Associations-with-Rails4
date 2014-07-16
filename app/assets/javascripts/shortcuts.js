@@ -1,0 +1,2 @@
+window.log = Em.Logger;
+
