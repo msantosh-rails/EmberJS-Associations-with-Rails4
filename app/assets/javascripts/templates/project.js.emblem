@@ -14,6 +14,9 @@ unless isEditing
       ' Technology:
       model.technology
 
+    p
+      ' Assigned To:
+      view Em.Select content=users optionValuePath='content.id' optionLabelPath='content.firstName' value=model.userId
 
     p
       a.delete href='#' click="delete" delete

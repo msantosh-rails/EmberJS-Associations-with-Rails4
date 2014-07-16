@@ -1,5 +1,5 @@
 App.Store = DS.Store.extend({
-
+  revision: 11
 });
 
 // Override the default adapter with the `DS.ActiveModelAdapter` which

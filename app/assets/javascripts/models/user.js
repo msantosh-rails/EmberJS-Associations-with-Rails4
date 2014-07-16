@@ -6,11 +6,16 @@ App.User = DS.Model.extend({
   status: DS.attr('string', { defaultValue: 'new' }),
   notes: DS.attr('string'),
 //  projects: DS.hasMany("project", {async: true}),
+    projectsCount: function() {
+//    alert(this.get('projects'));
+        return this.get('projects.length');
+    }.property('count'),
+    
   fullName: function() {
     return this.get('firstName') + ' ' + this.get('lastName')
-  }.property('firstName', 'lastName'),
+  }.property('firstName', 'lastName')
 
-})
+}),
 
 App.User.reopenClass({
   

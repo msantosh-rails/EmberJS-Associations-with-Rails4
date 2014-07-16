@@ -1,11 +1,8 @@
 App.ProjectController = Ember.ObjectController.extend({
 
-  isEditing: false,
-user: function(){
 
-	return this.get("userId");
-}.property(),
-  
+  isEditing: false,
+
 users: function(){
         return this.store.find('user');
     }.property(),

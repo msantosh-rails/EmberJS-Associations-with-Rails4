@@ -20,6 +20,7 @@ unless isEditing
 
     p
       ' No.of Projects:
+      model.projectsCount
 
     p
       label About:

@@ -23,6 +23,31 @@ Description:    Resets default styling of common browsers to a common base
 ----------------------------------------
 */
 
+article.projects
+{
+
+	float:left;
+}
+
+h1.logs
+{
+	float:right;
+
+}
+
+h1.logs a
+{
+	color:white;
+
+}
+
+h1.logs a:hover
+{
+	text-decoration:none;
+
+}
+
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic);
 @import url(http://fonts.googleapis.com/css?family=Maven+Pro);
 ul, ol {
