@@ -5,14 +5,14 @@ App.AuthController = Ember.ObjectController.extend({
     var me;
     me = this;
     return $.ajax({
-      url: "/users/sign_in.json",
+      url: App.urls.login,
       type: "POST",
       data: {
         "user[email]": route.currentModel.email,
         "user[password]": route.currentModel.password
       },
       success: function(data) {
-//        console.log("Login Msg " + data.user.dummy_msg);
+        log.log("Login Msg " + data.user.dummy_msg);
         me.set('currentUser', data.user);
         return route.transitionTo('home');
       },
@@ -31,7 +31,7 @@ App.AuthController = Ember.ObjectController.extend({
     var me;
     me = this;
     return $.ajax({
-      url: "/users.json",
+      url: App.urls.register,
       type: "POST",
       data: {
         "user[first_name]": route.currentModel.first_name,
@@ -52,16 +52,16 @@ App.AuthController = Ember.ObjectController.extend({
   },
   logout: function() {
     var me;
-//    console.info("Logging out...");
+    log.info("Logging out...");
     me = this;
     return $.ajax({
-      url: "/users/sign_out.json",
+      url: App.urls.logout,
       type: "DELETE",
       dataType: "json",
       success: function(data, textStatus, jqXHR) {
         $('meta[name="csrf-token"]').attr('content', data['csrf-token']);
         $('meta[name="csrf-param"]').attr('content', data['csrf-param']);
-        console.info("Logged out on server");
+        log.info("Logged out on server");
         me.set('currentUser', null);
         return me.transitionToRoute("home");
       },
@@ -75,18 +75,21 @@ App.AuthController = Ember.ObjectController.extend({
 App.NavbarController = Ember.ObjectController.extend({
   needs: ['auth'],
   isAuthenticated: Em.computed.alias("controllers.auth.isAuthenticated"),
+  user: Em.computed.alias("controllers.auth.currentUser"),
+  name: Em.computed.any("user.first_name", "user.email"),
+
   actions: {
     logout: function() {
-//      console.info("NavbarController handling logout event...");
+      log.info("NavbarController handling logout event...");
       return this.get("controllers.auth").logout();
     }
   }
 });
 
-App.WelcomeMsgController = Ember.ObjectController.extend({
-  needs: ['auth'],
-  isAuthenticated: Em.computed.alias("controllers.auth.isAuthenticated"),
-  user: Em.computed.alias("controllers.auth.currentUser"),
-  hiName: Em.computed.any("user.first_name", "user.email")
-});
+//App.WelcomeMsgController = Ember.ObjectController.extend({
+//  needs: ['auth'],
+//  isAuthenticated: Em.computed.alias("controllers.auth.isAuthenticated"),
+//  user: Em.computed.alias("controllers.auth.currentUser"),
+//  hiName: Em.computed.any("user.name", "user.email")
+//});
 

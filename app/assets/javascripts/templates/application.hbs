@@ -1,29 +1,6 @@
-  <header>
-  	<article class="index">
-  		<div class="logo">
-  			<h1><a id="ember359" class="ember-view" href="#/home">Home</a></h1>
-  		</div>
-  	</article>
-  	{{#if isAuthenticated}}
-  	<article class="projects">
-  		<div class="logo">
-  			<h1><a id="ember367" class="ember-view" href="#/projects">Projects   </a></h1>
-  		</div>
-  	</article>
-  	{{/if}}
-  	
-  	{{#if isAuthenticated}}
-  	  	<button class="btn" {{action logout}}>Logout</button>
-  	  	asdsafasdfsdaf
-
-  	{{else}}
-  		<h1 class="logs"><a id="ember384" class="ember-view active" href="#/registration"> Register</a></h1>  		
-  		<h1 class="logs"><a id="ember384" class="ember-view active" href="#/login">Login &nbsp;&nbsp;&nbsp;</a></h1>
-  	{{/if}}
-  	
-  </header>
+{{render "navbar"}}
   <section id="main">
-  
+ 
   	{{outlet}}
+
   </section>
-  <footer></footer>

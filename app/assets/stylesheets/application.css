@@ -121,7 +121,7 @@ h1, h2 {
 h1 {
   font-size: 26px;
   font-weight: bold;
-  padding: 0 0 20px 0;
+  xpadding: 0 0 20px 0;
 }
 
 h2 {
@@ -154,9 +154,9 @@ header article .logo {
   padding: 4px 0 0 0;
 }
 header article .logo a {
-  font-size: 28px;
+  font-size: 26px;
   font-family: "Maven Pro";
-  font-weight: 500;
+  font-weight: bold;
   color: white;
 }
 header article .logo a:hover {

@@ -1,18 +1,34 @@
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <div class="brand strong">{{#linkTo 'home'}}Home{{/linkTo}}</div>
-      <ul class="nav">
-          <li>{{#linkTo 'projects'}}Projects{{/linkTo}}</li>
-      </ul>
-      <div class="btn-group pull-right">
-        {{#if isAuthenticated}}
-            <button class="btn" {{action logout}}>Logout</button>
-        {{else}}
-        	{{#linkTo 'login'}}Login{{/linkTo}}
-        	{{#linkTo 'registration'}}Register{{/linkTo}}        	
-        {{/if}}
-      </div>
-    </div>
-  </div>
-</div>
+  <header>
+  	<article class="index">
+  		<div class="logo">
+  			<h1><a id="ember359" class="ember-view" href="#/home">Home</a></h1>
+  		</div>
+  	</article>
+  	{{#if isAuthenticated}}
+  	<article class="projects">
+  		<div class="logo">
+  			<h1><a id="ember367" class="ember-view" href="#/projects">Projects  &nbsp; </a></h1>
+  			
+  		</div>
+  	</article>
+
+  	<article class="projects">
+  		<div class="logo">
+<!--  			<h1><a id="ember367" class="ember-view" href="#/users"> {{name}}   </a></h1>-->
+  			{{#link-to 'user' user}}  {{name}} {{/link-to}}
+  			
+  		</div>
+  	</article>
+
+  	{{/if}}
+  	
+  	{{#if isAuthenticated}}
+  	  	
+  		<h1 class="logs"><button class="btn" {{action logout}}>Logout</button></h1>  		
+
+  	{{else}}
+  		<h1 class="logs"><a id="ember384" class="ember-view active" href="#/registration"> Register</a></h1>  		
+  		<h1 class="logs"><a id="ember384" class="ember-view active" href="#/login">Login &nbsp;&nbsp;&nbsp;</a></h1>
+  	{{/if}}
+  </header>
+

@@ -1,3 +1,5 @@
+//= require ./shortcuts
+//= require ./settings
 //= require ./store
 //= require_tree ./mixins
 //= require_tree ./models

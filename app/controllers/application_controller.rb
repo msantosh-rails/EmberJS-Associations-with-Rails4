@@ -8,13 +8,16 @@ class ApplicationController < ActionController::Base
 
   before_filter :update_sanitized_params, if: :devise_controller?
 
-#  rescue_from CanCan::AccessDenied do |exception|
-#    redirect_to root_path, :alert => exception.message
-#  end
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_path, :alert => exception.message
+  end
 
   def current_user_json
     if current_user
       UserSerializer.new(current_user, :scope => current_user, :root => false).to_json
+      puts "=============================================================="
+      puts current_user
+      puts "=============================================================="      
     else
       {}.to_json
     end
